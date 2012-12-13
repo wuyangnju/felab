@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  report_title: MyString
+  create_time: 2012-12-14 01:18:39
+  web_publish_time: 2012-12-14 01:18:39
+  report_type: MyString
+  report_url: MyString
+  stock_code: MyString
+  rating: MyString
+  target_price: 1.5
+  source: MyString
+  scrape_time: 2012-12-14 01:18:39
+  target_increase_lower: 1.5
+  target_increase_upper: 1.5
+  benchmark: MyString
+  target_time_lower: 1.5
+  target_time_upper: 1.5
+
+two:
+  report_title: MyString
+  create_time: 2012-12-14 01:18:39
+  web_publish_time: 2012-12-14 01:18:39
+  report_type: MyString
+  report_url: MyString
+  stock_code: MyString
+  rating: MyString
+  target_price: 1.5
+  source: MyString
+  scrape_time: 2012-12-14 01:18:39
+  target_increase_lower: 1.5
+  target_increase_upper: 1.5
+  benchmark: MyString
+  target_time_lower: 1.5
+  target_time_upper: 1.5

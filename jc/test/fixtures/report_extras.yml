@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  high: 1.5
+  low: 1.5
+  close: 1.5
+  right: 1.5
+  report: 
+
+two:
+  high: 1.5
+  low: 1.5
+  close: 1.5
+  right: 1.5
+  report: 

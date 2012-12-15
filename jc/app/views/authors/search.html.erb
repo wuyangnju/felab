@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reports</h1>
+<table border="1">
+  <tr>
+      <td>report title</td>
+      <td>correctness</td>
+  </tr>
+
+<% @author.reports.each do |report| %>
+  <tr>
+      <td><%= report.report_title %></td>
+      <td><%= report.report_extra.right %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>

@@ -10,14 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213171849) do
+ActiveRecord::Schema.define(:version => 20121214164823) do
+
+  create_table "author_extras", :force => true do |t|
+    t.integer "author_id"
+    t.integer "report_correctness_count"
+  end
+
+  add_index "author_extras", ["author_id"], :name => "index_author_extras_on_author_id"
 
   create_table "authors", :force => true do |t|
     t.string  "name"
-    t.integer "oranization_id"
+    t.integer "organization_id"
   end
 
-  add_index "authors", ["oranization_id"], :name => "index_authors_on_oranization_id"
+  add_index "authors", ["organization_id"], :name => "index_authors_on_oranization_id"
 
   create_table "organizations", :force => true do |t|
     t.string "name"

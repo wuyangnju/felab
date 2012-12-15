@@ -1,4 +1,4 @@
 class ReportExtra < ActiveRecord::Base
-  belongs_to :report
   attr_accessible :close, :high, :low, :right
+  belongs_to :report, :inverse_of => :report_extra
 end

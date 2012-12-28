@@ -1,11 +1,13 @@
 <h1>Listing author_extras</h1>
 
-<table>
+<table border="1">
   <tr>
     <th>Name</th>
     <th>Organization</th>
-    <th>ReportCount</th>
-    <th>ReportCorrectnessCount</th>
+    <th>Report Count</th>
+    <th>Report Correctness Count</th>
+    <th>Report Correctness Ratio</th>
+    <th>More...</th>
   </tr>
 
 <%= will_paginate @author_extras %>
@@ -14,8 +16,9 @@
   <tr>
     <td><%= author_extra.author.name %></td>
     <td><%= author_extra.author.organization.name %></td>
-    <td><%= author_extra.author.reports.size %>
-    <td><%= author_extra.report_correctness_count %>
+    <td><%= author_extra.report_count %></td>
+    <td><%= author_extra.report_correctness_count %></td>
+    <td><%= author_extra.report_correctness_ratio * 100 %>%</td>
     <td><%= link_to 'Show Reports', author_extra.author %></td>
   </tr>
 <% end %>

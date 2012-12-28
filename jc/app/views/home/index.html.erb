@@ -1,6 +1,65 @@
+<div align="center">
 <form action="author_search" method="get">
 Author Name:<input type="text" name="name">
 <input type="submit" value="Search">
 </form>
 
-<%= link_to "All Authors", author_extras_path %>
+<table border="1">
+  <tr>
+  	<th>Rank</th>
+    <th>Name</th>
+    <th>Organization</th>
+    <th>Report Count</th>
+    <th>Correctness Count</th>
+    <th>Correctness Ratio</th>
+    <th>More...</th>
+  </tr>
+
+<% @author_extras.each_with_index do |author_extra, index| %>
+  <tr>
+  	<td><%= index + 1 %></td>
+    <td><%= author_extra.author.name %></td>
+    <td><%= author_extra.author.organization.name %></td>
+    <td><%= author_extra.report_count %></td>
+    <td><%= author_extra.report_correctness_count %></td>
+    <td><%= author_extra.report_correctness_ratio * 100 %>%</td>
+    <td><%= link_to 'Show Reports', author_extra.author %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to "More Authors ...", author_extras_path %>
+
+<br><br><br>
+
+<form action="organization_search" method="get">
+Organization Name:<input type="text" name="name">
+<input type="submit" value="Search">
+</form>
+
+<table border="1">
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Author Count</th>
+    <th>Report Count</th>
+    <th>Report Correctness Count</th>
+    <th>Report Correctness Ratio</th>
+    <th>More ...</th>
+  </tr>
+
+<% @organization_extras.each_with_index do |organization_extra, index| %>
+  <tr>
+    <td><%= index + 1 %></td>
+    <td><%= organization_extra.organization.name %></td>
+    <td><%= organization_extra.organization.authors.size %></td>
+    <td><%= organization_extra.report_count %></td>
+    <td><%= organization_extra.report_correctness_count %></td>
+    <td><%= organization_extra.report_correctness_ratio * 100 %>%</td>
+    <td><%= link_to 'Show Author', organization_extra.organization %></td>
+  </tr>
+
+<% end %>
+</table>
+<%= link_to "More Organizations ...", organization_extras_path %>
+
+</div>

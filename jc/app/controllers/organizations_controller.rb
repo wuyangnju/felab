@@ -21,6 +21,15 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  # GET /authors/search/xx
+  def search
+    @organization = Organization.where("name = ?", params[:name]).first
+    # respond_to do |format|
+    #   format.html # search.html.erb
+    #   format.json { render :json => @organizations }
+    # end
+  end
+
   # GET /organizations/new
   # GET /organizations/new.json
   def new

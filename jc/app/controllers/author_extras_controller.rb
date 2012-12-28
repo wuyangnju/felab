@@ -2,7 +2,7 @@ class AuthorExtrasController < ApplicationController
   # GET /author_extras
   # GET /author_extras.json
   def index
-    @author_extras = AuthorExtra.order("report_correctness_count DESC").paginate(:page => params[:page])
+    @author_extras = AuthorExtra.order("report_correctness_ratio DESC").paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

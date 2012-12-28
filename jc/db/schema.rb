@@ -10,11 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214164823) do
+ActiveRecord::Schema.define(:version => 20121215143315) do
 
   create_table "author_extras", :force => true do |t|
     t.integer "author_id"
     t.integer "report_correctness_count"
+    t.integer "report_count"
+    t.float   "report_correctness_ratio"
   end
 
   add_index "author_extras", ["author_id"], :name => "index_author_extras_on_author_id"
@@ -25,6 +27,15 @@ ActiveRecord::Schema.define(:version => 20121214164823) do
   end
 
   add_index "authors", ["organization_id"], :name => "index_authors_on_oranization_id"
+
+  create_table "organization_extras", :force => true do |t|
+    t.integer "organization_id"
+    t.integer "report_correctness_count"
+    t.integer "report_count"
+    t.float   "report_correctness_ratio"
+  end
+
+  add_index "organization_extras", ["organization_id"], :name => "index_organization_extras_on_organization_id"
 
   create_table "organizations", :force => true do |t|
     t.string "name"

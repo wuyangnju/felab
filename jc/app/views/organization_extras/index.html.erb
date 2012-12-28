@@ -1,0 +1,28 @@
+<h1>Listing organization_extras</h1>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Author Count</th>
+    <th>Report Count</th>
+    <th>Report Correctness Count</th>
+    <th>Report Correctness Ratio</th>
+    <th>More ...</th>
+  </tr>
+
+<% @organization_extras.each do |organization_extra| %>
+  <tr>
+    <td><%= organization_extra.organization.name %></td>
+    <td><%= organization_extra.organization.authors.size %></td>
+    <td><%= organization_extra.report_count %></td>
+    <td><%= organization_extra.report_correctness_count %></td>
+    <td><%= organization_extra.report_correctness_ratio * 100 %>%</td>
+    <td><%= link_to 'Show Author', organization_extra.organization %></td>
+  </tr>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Organization extra', new_organization_extra_path %>

@@ -11,7 +11,7 @@ Jc::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  resources :authors, :organizations, :author_extras
+  resources :authors, :organizations, :author_extras, :organization_extras
 
   # Sample resource route with options:
   #   resources :products do
@@ -55,4 +55,5 @@ Jc::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   match '/author_search' => 'authors#search'
+  match '/organization_search' => 'organizations#search'
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  report_correctness_count: 1
+  report_count: 1
+  report_correctness_ratio: 1.5
+  organization: 
+
+two:
+  report_correctness_count: 1
+  report_count: 1
+  report_correctness_ratio: 1.5
+  organization: 

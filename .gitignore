@@ -16,3 +16,4 @@ rerun.txt
 pickle-email-*.html
 .settings
 .project
+*/rails_server.log

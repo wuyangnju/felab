@@ -7,7 +7,7 @@ development:
   adapter: mysql2
   encoding: utf8
   collation: utf8_general_ci
-  database: jc_dev
+  database: jc2_dev
   pool: 5
   host: localhost
   username: jc2
@@ -20,7 +20,7 @@ test:
   adapter: mysql2
   encoding: utf8
   collation: utf8_general_ci
-  database: jc_test
+  database: jc2_test
   pool: 5
   host: localhost
   username: jc2
@@ -30,7 +30,7 @@ production:
   adapter: mysql2
   encoding: utf8
   collation: utf8_general_ci
-  database: jc_prod
+  database: jc2_prod
   pool: 5
   host: localhost
   username: jc2

@@ -1,0 +1,22 @@
+report
+report_title            :string
+create_time	            :datetime
+web_publish_time	    :datetime
+report_type	            :string
+report_url              :string
+stock_code              :string
+rating                  :string
+target_price            :float
+source                  :string
+scrape_time             :datetime
+target_increase_lower   :float
+target_increase_upper   :float
+benchmark               :string
+target_time_lower       :float
+target_time_upper       :float
+org                     :references
+high                    :float
+low	                    :float
+close                   :float
+right                   :float
+--timestamps false

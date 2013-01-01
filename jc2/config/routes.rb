@@ -1,7 +1,12 @@
 Jc2::Application.routes.draw do
-  resources :orgs
+  resources :orgs do
+    resources :authors;
+    resources :reports;
+  end
 
-  resources :authors
+  resources :authors do
+    resources :reports;
+  end
 
   resources :reports
 

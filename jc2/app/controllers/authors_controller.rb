@@ -1,7 +1,9 @@
 class AuthorsController < ApplicationController
 
   def index
-    @authors = Author.paginate(:page => params[:page]);
+    @authors = Author.scoped;
+    @authors = @authors.where(:org_id => params[:org_id]) unless params[:org_id].blank?
+    @authors = @authors.paginate(:page => params[:page]);
 
     render :json => @authors;
   end

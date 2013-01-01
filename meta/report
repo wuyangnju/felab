@@ -1,8 +1,8 @@
 report
 report_title            :string
-create_time	            :datetime
-web_publish_time	    :datetime
-report_type	            :string
+create_time             :datetime
+web_publish_time        :datetime
+report_type             :string
 report_url              :string
 stock_code              :string
 rating                  :string
@@ -16,7 +16,7 @@ target_time_lower       :float
 target_time_upper       :float
 org                     :references
 high                    :float
-low	                    :float
+low                     :float
 close                   :float
 right                   :float
 --timestamps false

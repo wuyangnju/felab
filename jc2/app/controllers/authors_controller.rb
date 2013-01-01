@@ -1,9 +1,9 @@
 class AuthorsController < ApplicationController
 
   def index
-    @authors = Author.all
+    @authors = Author.paginate(:page => params[:page]);
 
-    render :json =>@authors;
+    render :json => @authors;
   end
 
   def show

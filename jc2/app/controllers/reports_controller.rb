@@ -1,7 +1,7 @@
 class ReportsController < ApplicationController
 
   def index
-    @reports = Report.all
+    @reports = Report.paginate(:page => params[:page]);
 
     render :json => @reports;
   end

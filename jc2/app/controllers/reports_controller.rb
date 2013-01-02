@@ -1,5 +1,4 @@
 class ReportsController < ApplicationController
-  respond_to :json
 
   def index
     @reports = Report.scoped
@@ -7,13 +6,13 @@ class ReportsController < ApplicationController
     @reports = @reports.joins(:authors).where('authors.id' => params[:author_id]) unless params[:author_id].blank?
     @reports = @reports.paginate(:page => params[:page])
 
-    respond_with(@reports)
+    render :json => @reports, :include => {:authors => {:only => :name}, :org => {:only => :name}}
   end
 
   def show
     @report = Report.find(params[:id])
 
-    respond_with(@report)
+    render :json => @report, :include => {:authors => {:only => :name}, :org => {:only => :name}}
   end
 
 end

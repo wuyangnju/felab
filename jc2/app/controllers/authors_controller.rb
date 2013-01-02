@@ -1,5 +1,4 @@
 class AuthorsController < ApplicationController
-  respond_to :json
 
   def index
     @authors = Author.scoped
@@ -7,12 +6,12 @@ class AuthorsController < ApplicationController
     @authors = @authors.where(:name => params[:name].strip) unless params[:name].blank?
     @authors = @authors.paginate(:page => params[:page])
 
-    respond_with(@authors)
+    render :json => @authors, :include => {:org => {:only => :name}}
   end
 
   def show
     @author = Author.find(params[:id])
     @author.sex = "male"
-    respond_with(@author)
+    render :json => @author, :include => {:org => {:only => :name}}
   end
 end

@@ -26,12 +26,12 @@
                 var div = $("<div></div>").appendTo("body");
                 $.ajax({
                     url: urls[i],
-                    context: div,
+                    context: {"response_div": div},
                     success: function(data) {
-                        $(this).html(JSON.stringify(data));
+                        $(this.response_div).append("<p>" + JSON.stringify(data) +"</p>");
                     },
                     error: function(jqXHR) {
-                        $(this).html(jqXHR.status + "</br>" + jqXHR.statusText).css("color", "red");
+                        $(this.response_div).append("<p>" + jqXHR.status + " " + jqXHR.statusText + "</p>").css("color", "red");
                     }
                 });
             }

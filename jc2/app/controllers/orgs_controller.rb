@@ -3,7 +3,7 @@ class OrgsController < ApplicationController
   def index
     @orgs = Org.scoped
     @orgs = @orgs.where(:name => params[:name].strip) unless params[:name].blank?
-    @orgs = @orgs.paginate(:page => params[:page])
+    @orgs = @orgs.paginate(:page => params[:page], :per_page => 5)
 
     render :json => @orgs, :methods => :all_reports_statistic
   end

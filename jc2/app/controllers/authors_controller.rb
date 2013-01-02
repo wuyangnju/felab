@@ -14,6 +14,6 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
 
     render :json => @author, :include => {:org => {:only => :name}},
-           :methods => [:all_reports_statistic, :annual_reports_statistic]
+           :methods => [:all_reports_statistic, :annual_reports_statistic, :investment]
   end
 end

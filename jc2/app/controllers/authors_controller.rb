@@ -6,12 +6,14 @@ class AuthorsController < ApplicationController
     @authors = @authors.where(:name => params[:name].strip) unless params[:name].blank?
     @authors = @authors.paginate(:page => params[:page])
 
-    render :json => @authors, :include => {:org => {:only => :name}}
+    render :json => @authors, :include => {:org => {:only => :name}},
+           :methods => :all_reports_statistic
   end
 
   def show
     @author = Author.find(params[:id])
-    @author.sex = "male"
-    render :json => @author, :include => {:org => {:only => :name}}
+
+    render :json => @author, :include => {:org => {:only => :name}},
+           :methods => [:all_reports_statistic, :annual_reports_statistic]
   end
 end

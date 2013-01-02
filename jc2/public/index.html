@@ -21,16 +21,20 @@
                 "reports?page=2",
                 "reports/1"
             ];
-            function print(i) {
-                if (i < urls.length) {
-                    $("<h3></h3>").html(urls[i]).appendTo("body");
-                    $.get(urls[i], function(response) {
-                        $("<p></p>").html(JSON.stringify(response)).appendTo("body");
-                        print(i + 1);
-                    });
-                }
-            };
-            print(0);
+            for(var i = 0; i < urls.length; i++) {
+                $("<h3></h3>").html(urls[i]).appendTo("body");
+                var div = $("<div></div>").appendTo("body");
+                $.ajax({
+                    url: urls[i],
+                    context: div,
+                    success: function(data) {
+                        $(this).html(JSON.stringify(data));
+                    },
+                    error: function(jqXHR) {
+                        $(this).html(jqXHR.status + "</br>" + jqXHR.statusText).css("color", "red");
+                    }
+                });
+            }
         });
     </script>
 </head>

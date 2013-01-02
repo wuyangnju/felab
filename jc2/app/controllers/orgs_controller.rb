@@ -1,17 +1,18 @@
 class OrgsController < ApplicationController
+  respond_to :json
 
   def index
-    @orgs = Org.scoped;
+    @orgs = Org.scoped
     @orgs = @orgs.where(:name => params[:name].strip) unless params[:name].blank?
-    @orgs = @orgs.paginate(:page => params[:page]);
+    @orgs = @orgs.paginate(:page => params[:page])
 
-    render :json => @orgs;
+    respond_with(@orgs)
   end
 
   def show
     @org = Org.find(params[:id])
 
-    render :json => @org;
+    respond_with(@org)
   end
 
 end

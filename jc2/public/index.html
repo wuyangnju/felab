@@ -25,7 +25,6 @@
                 if (i < urls.length) {
                     $("<h3></h3>").html(urls[i]).appendTo("body");
                     $.get(urls[i], function(response) {
-                        console.log(JSON.stringify(response));
                         $("<p></p>").html(JSON.stringify(response)).appendTo("body");
                         print(i + 1);
                     });
